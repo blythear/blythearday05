@@ -1,0 +1,20 @@
+import math
+x = []
+y = []
+Pointsin = 0
+for i in range(160):
+    xrand = np.random.uniform(-1,1)
+    yrand = np.random.uniform(-1,1)
+    x.append(xrand)
+    y.append(yrand)
+print(x[1])
+print(y[1])
+for i in range(160):
+    if math.sqrt(x[i]**2 + y[i]**2) < 1.0 and math.sqrt(x[i]**2 + y[i]**2) > 0.5:
+        Pointsin = Pointsin + 1
+Area = (np.pi*1 - np.pi*(0.5)**2)/4
+Areappro = Pointsin/160
+E = np.abs(Area - Areappro)/Area
+print(E)
+print(Areappro)
+print(Area)
